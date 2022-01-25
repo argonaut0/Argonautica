@@ -1,0 +1,13 @@
+{
+  "name": "argonautica-stack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:argonaut0/Argonautica.git",
+  "author": "Jason Hsu <jasonhsu2013@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "argonautica-cms",
+    "argonautica-srv"
+  ]
+}
