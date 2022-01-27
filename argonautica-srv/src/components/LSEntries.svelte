@@ -1,6 +1,12 @@
 <script lang="ts">
+    import { page } from '$app/stores';
     import LSEntry from "./LSEntry.svelte";
     export let entries;
+
+    let path = "";
+    page.subscribe((obj)=> {
+        path = obj.url.pathname;
+    });
 </script>
 
 
@@ -10,12 +16,14 @@
         <LSEntry {entry}></LSEntry>
     </li>
 {/each}
-<p>guest@argonautica in ~ via argonautlabs.ca $ <span class="blinking-cursor">&#x2588;</span></p>
+<p>guest@argonautica in ~{path} via argonautlabs.ca $ <span class="blinking-cursor">&#x2588;</span></p>
 </ul>
 
 <style>
 ul {
     list-style-type: none;
+    padding: 0;
+    margin: 0;
     font-family: "Fira Code", monospace;
 }
 
@@ -29,7 +37,7 @@ ul {
     color: transparent;
   }
   50% {
-    color: #000000;
+    color: whitesmoke;
   }
 }
 </style>

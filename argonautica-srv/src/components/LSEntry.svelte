@@ -9,9 +9,28 @@
     p, a {
         font-family: "Fira Code", monospace;
     }
+    
+    a {
+        color: yellowgreen;
+    }
+
+    .chmod {
+        color: cadetblue;
+    }
+
+    .usrgrp {
+        color: tomato;
+    }
+
+    .date {
+        color:cornflowerblue
+    }
 </style>
 
 <p>
-    {`${entry.type === "folder" ? "drwxr-xr-x" : "-rw-r--r--"}    1 argonaut0 argonautlabs ${Math.floor(1000 * Math.random())} ${entry.date.toLocaleDateString()}`}
+    <span class="chmod">{entry.type === "folder" ? "drwxr-xr-x " : "-rw-r--r-- "}</span>
+    1 <span class="usrgrp">argonaut0 argonautlabs</span>
+    {Math.floor(1000 * Math.random())}
+    <span class="date">{entry.date.toLocaleDateString()}</span>
     <a href="/#">{entry.name}</a>
 </p>

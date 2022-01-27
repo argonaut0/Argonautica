@@ -22,5 +22,20 @@ const entries = [
 ]
 </script>
 
+<div class="col">
+    <div class="elem">
+        <LSEntries {entries}></LSEntries>
+    </div>
+</div>
 
-<LSEntries {entries}></LSEntries>
+<style>
+    .col {
+        background-color: #262626;
+        height: 100vh;
+        color: whitesmoke;
+        display: flex;
+        flex-direction: column;
+        justify-content:  center;
+        align-items: center;
+    }
+</style>
