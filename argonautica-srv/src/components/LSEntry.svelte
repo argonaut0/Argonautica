@@ -6,12 +6,25 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;500&display=swap');
 
-    p, a {
+    .line, a {
         font-family: "Fira Code", monospace;
     }
     
-    a {
+    .line {
+        display: flex;
+        gap: 15px;
+    }
+    
+    .file {
         color: yellowgreen;
+    }
+
+    .folder {
+        color: darkorange;
+    }
+
+    .link {
+        color: deepskyblue;
     }
 
     .chmod {
@@ -25,12 +38,26 @@
     .date {
         color:cornflowerblue
     }
+
+    .wordcount {
+        width: 90px;
+    }
 </style>
 
-<p>
-    <span class="chmod">{entry.type === "folder" ? "drwxr-xr-x " : "-rw-r--r-- "}</span>
+<div class="line">
+    <span class="chmod">{
+        entry.type === "folder" ?
+        "drwxr-xr-x " :
+        entry.type === "file" ?
+        "-rw-r--r-- " :
+        "lrwxrwxrwx "
+        }</span>
     1 <span class="usrgrp">argonaut0 argonautlabs</span>
-    {Math.floor(1000 * Math.random())}
+    <span class="wordcount">{entry.wordcount + " words"}</span>
     <span class="date">{entry.date.toLocaleDateString()}</span>
-    <a href="/#">{entry.name}</a>
-</p>
+    <a href="/#" class={entry.type}>{
+    entry.type === "link" ?
+    `${entry.name} -> ${entry.linkLocation}`:
+    entry.name
+    }</a>
+</div>
