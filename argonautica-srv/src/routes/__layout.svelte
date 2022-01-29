@@ -1,7 +1,7 @@
 <!-- src/routes/__layout.svelte -->
 <nav>
 	<a href="/">Home</a>
-	<a href="/about">About</a>
+	<a href="/projects">Projects</a>
 	<a href="/jests">Jests</a>
 </nav>
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { onDestroy, onMount } from "svelte";
+    import { onMount } from "svelte";
     import * as THREE from 'three';
 
     const scene = new THREE.Scene();
