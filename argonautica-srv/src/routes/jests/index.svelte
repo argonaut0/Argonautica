@@ -1,6 +1,6 @@
 <script lang="ts">
 
-import LSEntries from "../components/LSEntries.svelte";
+import LSEntries from "../../components/LSEntries.svelte";
 
 
 const entries = [

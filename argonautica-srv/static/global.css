@@ -1,3 +1,10 @@
+/* CSS Reset */
+
+/* Stupid bounding box crap */
+* {
+  box-sizing: border-box;
+}
+
 /* Remove default margin */
 body,
 h1,
