@@ -55,7 +55,7 @@
     1 <span class="usrgrp">argonaut0 argonautlabs</span>
     <span class="wordcount">{entry.wordcount + " words"}</span>
     <span class="date">{entry.date.toLocaleDateString()}</span>
-    <a href="/#" class={entry.type}>{
+    <a href={entry.linkURL} class={entry.type}>{
     entry.type === "link" ?
     `${entry.name} -> ${entry.linkLocation}`:
     entry.name

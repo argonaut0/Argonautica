@@ -14,13 +14,15 @@ const entries = [
         name: "This is a file",
         type: "file",
         wordcount: 113,
-        date: new Date()
+        date: new Date(),
+        linkURL: "/jests/123-test"
     },
     {
         name: "This is another folder",
         type: "folder",
         wordcount: 632,
-        date: new Date()
+        date: new Date(),
+        linkURL: "/jests/123-test"
     },
     {
         name: "This is an external link",

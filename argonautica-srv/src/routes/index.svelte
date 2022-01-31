@@ -36,7 +36,7 @@
 
     const loader = new FontLoader(); 
 
-    loader.load( "/fira-code-light.typeface.json", function ( font ) {
+    loader.load( "fira-code-light.typeface.json", function ( font ) {
 
         const tgeometry = new TextGeometry( 'WebGL go Brrrrrreeerrerr', {
             font: font,
