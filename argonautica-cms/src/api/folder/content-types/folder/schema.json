@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "folders",
+  "info": {
+    "singularName": "folder",
+    "pluralName": "folders",
+    "displayName": "folder",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "posts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::post.post",
+      "mappedBy": "folder"
+    }
+  }
+}
