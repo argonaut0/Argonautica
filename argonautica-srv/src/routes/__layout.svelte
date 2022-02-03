@@ -1,8 +1,8 @@
 <!-- src/routes/__layout.svelte -->
 <nav>
 	<a href="/">Home</a>
-	<a href="/projects">Projects</a>
-	<a href="/jests">Jests</a>
+	<a href="https://github.com/argonaut0">Github</a>
+	<a href="/posts">Posts</a>
 </nav>
 
 <slot></slot>
