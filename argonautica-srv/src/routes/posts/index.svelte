@@ -4,13 +4,7 @@
 
 	/** @type {import('@sveltejs/kit').Load} */
 	export async function load({ params, fetch, session, stuff }) {
-        const query = qs.stringify({
-            fields: ["title", "updatedAt"],
-        }, {
-            encodeValuesOnly: true,
-        });
-
-		const url = `http://localhost:1337/api/posts?${query}`;
+		const url = `http://localhost:1337/api/posts`;
 		const res = await fetch(url);
 
 		if (res.ok) {
@@ -32,6 +26,7 @@
 
 import LSEntries from "../../components/LSEntries.svelte";
 export let posts;
+console.log(posts.data);
 
 </script>
 

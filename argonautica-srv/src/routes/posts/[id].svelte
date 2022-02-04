@@ -2,13 +2,13 @@
 
 	/** @type {import('@sveltejs/kit').Load} */
 	export async function load({ params, fetch, session, stuff }) {
-		const url = `/api/jests/${params.id}.json`;
+		const url = `http://localhost:1337/api/posts/${params.id}`;
 		const res = await fetch(url);
 
 		if (res.ok) {
 			return {
 				props: {
-					article: await res.json()
+					post: (await res.json()).data,
 				}
 			};
 		}
@@ -21,9 +21,10 @@
 </script>
 <script lang="ts">
 	import { marked } from "marked";
-	export let article;
+	export let post;
+	console.log(post);
 
-	let content = marked.parse(article.content);
+	let content = marked.parse(post.attributes.content);
 </script>
 
 <div class="row">
@@ -52,7 +53,7 @@
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
 		* {
-			font-family: "Roboto", sans-serif;
+			font-family: "Fira Code", sans-serif;
 		}
 	</style>
 </svelte:head>

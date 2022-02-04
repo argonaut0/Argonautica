@@ -46,18 +46,12 @@
 
 <div class="line">
     <span class="chmod">{
-        entry.type === "folder" ?
-        "drwxr-xr-x " :
-        entry.type === "file" ?
-        "-rw-r--r-- " :
-        "lrwxrwxrwx "
+        "-rw-r--r-- "
         }</span>
     1 <span class="usrgrp">argonaut0 argonautlabs</span>
-    <span class="wordcount">{entry.wordcount + " words"}</span>
-    <span class="date">{entry.date.toLocaleDateString()}</span>
-    <a href={entry.linkURL} class={entry.type} target={entry.type === "link" ? "_blank" : "_self"}>{
-    entry.type === "link" ?
-    `${entry.name} -> ${entry.linkLocation}`:
-    entry.name
+    <span class="wordcount">{entry.attributes.content.split(" ").length + " words"}</span>
+    <span class="date">{new Date(entry.attributes.updatedAt).toLocaleDateString()}</span>
+    <a href="posts/{entry.id}" class="file" target="_self">{
+    entry.attributes.title
     }</a>
 </div>
