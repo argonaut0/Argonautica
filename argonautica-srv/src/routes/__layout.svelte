@@ -1,8 +1,8 @@
 <!-- src/routes/__layout.svelte -->
 <nav>
+    <p>Argonaut Labs</p>
 	<a href="/">Home</a>
 	<a href="https://github.com/argonaut0">Github</a>
-	<a href="/posts">Posts</a>
 </nav>
 
 <slot></slot>
@@ -15,8 +15,9 @@
         justify-content: center;
         align-items: center;
         background-color: #262626;
+        padding: 2vh;
     }
-    a {
+    a, p {
         font-family: "Fira Code", monospace;
         color: whitesmoke;
     }

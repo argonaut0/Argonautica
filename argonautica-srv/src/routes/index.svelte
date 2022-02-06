@@ -1,10 +1,10 @@
 <script context="module" lang="ts">
-    import * as qs from "qs";
+    import { DB_URL } from "../scripts/constants";
 
 
 	/** @type {import('@sveltejs/kit').Load} */
 	export async function load({ params, fetch, session, stuff }) {
-		const url = `http://localhost:1337/api/posts`;
+		const url = `${DB_URL}/api/posts`;
 		const res = await fetch(url);
 
 		if (res.ok) {
@@ -24,7 +24,7 @@
 
 <script lang="ts">
 
-import LSEntries from "../../components/LSEntries.svelte";
+import LSEntries from "../components/LSEntries.svelte";
 export let posts;
 
 </script>

@@ -1,8 +1,9 @@
 <script context="module" lang="ts">
+	import { DB_URL } from "../../scripts/constants";
 
 	/** @type {import('@sveltejs/kit').Load} */
 	export async function load({ params, fetch, session, stuff }) {
-		const url = `http://localhost:1337/api/posts/${params.id}`;
+		const url = `${DB_URL}/api/posts/${params.id}`;
 		const res = await fetch(url);
 
 		if (res.ok) {
@@ -46,6 +47,7 @@
 	.col {
 		max-width: 50vw;
 		text-align: justify;
+		
 	}
 	
 </style>
@@ -54,6 +56,23 @@
 		@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
 		* {
 			font-family: "Fira Code", sans-serif;
+		}
+
+		img {
+			max-height: 100vh;
+			display: block;
+			padding-top: 4vh;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		figcaption {
+			background-color: #111;
+			color: #fff;
+			font: italic smaller sans-serif;
+			padding: 2vh;
+			text-align: center;
+			margin-bottom: 4vh;
 		}
 	</style>
 </svelte:head>
